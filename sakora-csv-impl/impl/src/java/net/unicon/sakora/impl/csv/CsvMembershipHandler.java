@@ -93,6 +93,7 @@ public class CsvMembershipHandler extends CsvHandlerBase {
                     errors++;
                 } else if (MODE_SECTION.equals(mode)) {
                     // SECTION MEMBERSHIPS
+		    commonHandlerService.addCurrentSection(eid);
                     if (commonHandlerService.processSection(eid)) {
                         Section section = cmService.getSection(eid);
                         EnrollmentSet enrolled = section.getEnrollmentSet();
